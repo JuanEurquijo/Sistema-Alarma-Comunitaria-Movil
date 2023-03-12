@@ -6,7 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".activities.SensorsFragment">
 
-
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:clickable="true"
+        android:backgroundTint="@android:color/transparent"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <TextView
         android:id="@+id/titleSensors"
         android:layout_width="wrap_content"

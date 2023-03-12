@@ -4,22 +4,56 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="30dp"
+    android:paddingRight="30dp"
+    android:paddingLeft="30dp"
     tools:context=".activities.HousesFragment">
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:backgroundTint="@android:color/transparent"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintEnd_toStartOf="@+id/labelHouses"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/labelHouses"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="231dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="40dp"
         android:text="Añadir Casa"
         android:textAlignment="center"
         android:textColor="@color/black_1000"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/labelSensors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Selecciona los sensores"
+        android:textColor="@color/black_1000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelHouses" />
+
+
+    <com.edu.alarmsystem.utils.MultiSelectionSpinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:drawableStart="@drawable/ic_check_box_outline_blank_black_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelSensors"/>
 
     <TextView
         android:id="@+id/labelAddress"
@@ -30,7 +64,7 @@
         android:textColor="@color/black_1000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelHouses" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -156,28 +190,6 @@
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/labelSensors"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Selecciona los sensores"
-        android:textColor="@color/black_1000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/houseCountry" />
-
-
-    <com.edu.alarmsystem.utils.MultiSelectionSpinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:spinnerMode="dropdown"
-        android:drawableStart="@drawable/ic_check_box_outline_blank_black_24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelSensors"/>
-
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/my_button"
@@ -194,7 +206,7 @@
         app:cornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/houseCountry" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

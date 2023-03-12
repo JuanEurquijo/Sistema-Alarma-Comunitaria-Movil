@@ -155,7 +155,8 @@ public class SignUpActivity extends Activity {
 
         HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
 
-        String url = "https://192.168.80.16:8443/api/auth/register";
+        //Poner dirección IP del Eendpoint donde se aloja el backend - Quitar localhost///
+        String url = "https://localhost:8443/api/auth/register";
 
         JSONObject jsonBody = new JSONObject();
         try {

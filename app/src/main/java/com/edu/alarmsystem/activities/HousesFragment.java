@@ -1,5 +1,6 @@
 package com.edu.alarmsystem.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -53,6 +54,10 @@ public class HousesFragment extends Fragment implements MultiSelectionSpinner.Mu
         spinner.setItems(items, getString(R.string.select_items), this);
         selectedItems = new boolean[items.size()];
         Arrays.fill(selectedItems, false);
+
+        binding.btnBack.setOnClickListener(v ->{
+            startActivity(new Intent(getContext(),HomeActivity.class));
+        });
 
     }
 

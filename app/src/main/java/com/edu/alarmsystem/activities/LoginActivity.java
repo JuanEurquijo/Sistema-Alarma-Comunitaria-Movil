@@ -80,7 +80,8 @@ public class LoginActivity extends Activity {
 
         HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
 
-        String url = "https://192.168.80.16:8443/api/auth/login";
+        //Poner dirección IP del Eendpoint donde se aloja el backend - Quitar localhost///
+        String url = "https://localhost:8443/api/auth/login";
 
         if(binding.user.getEditText().getText().toString().isEmpty() && binding.user.getEditText().getText().toString().isEmpty()){
             alertsHelper.shortToast(getApplicationContext(),"Ingresa todos los datos");
