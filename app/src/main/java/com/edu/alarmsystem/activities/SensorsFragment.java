@@ -1,5 +1,6 @@
 package com.edu.alarmsystem.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,8 @@ import android.widget.ArrayAdapter;
 
 import com.edu.alarmsystem.R;
 import com.edu.alarmsystem.databinding.FragmentSensorsBinding;
+
+import java.util.Objects;
 
 public class SensorsFragment extends Fragment {
 
@@ -32,7 +35,12 @@ public class SensorsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         String [] options = {"Lumínico","Movimiento","Temperatura","Presión"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, options);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, options);
         binding.spinnerSensors.setAdapter(adapter);
+
+        binding.btnBack.setOnClickListener(v ->{
+            startActivity(new Intent(getContext(),HomeActivity.class));
+        });
     }
+
 }
