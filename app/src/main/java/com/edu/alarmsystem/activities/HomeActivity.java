@@ -1,19 +1,20 @@
 package com.edu.alarmsystem.activities;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.edu.alarmsystem.R;
 import com.edu.alarmsystem.databinding.ActivityHomeBinding;
 import com.edu.alarmsystem.databinding.ActivityMainBinding;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends Activity {
 
     private ActivityHomeBinding binding;
-    private ActionBarDrawerToggle actionBarDrawerToggle;
     HomeFragment homeFragment = new HomeFragment();
     SensorsFragment sensorsFragment = new SensorsFragment();
     HousesFragment housesFragment = new HousesFragment();
@@ -42,14 +43,20 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
-        binding.buttonMenu.setOnClickListener(view-> {
-            binding.drawerLayout.openDrawer(GravityCompat.START);
-        });
-
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this, binding.drawerLayout, R.string.nav_open, R.string.nav_close);
-        binding.drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
-
-        binding.navMenu.setNavigationItemSelectedListener(this::onOptionsItemSelected);
     }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("Cerrar Sesión");
+        builder.setMessage(R.string.textSignOut);
+
+        builder.setPositiveButton("SI", (dialog, which) -> startActivity(new Intent(getApplicationContext(),LoginActivity.class)));
+        builder.setNegativeButton("NO", (dialog, which) -> dialog.dismiss());
+
+        builder.create();
+        builder.show();
+    }
+
 }

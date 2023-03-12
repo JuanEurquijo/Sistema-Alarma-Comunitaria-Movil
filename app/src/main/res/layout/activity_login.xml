@@ -37,7 +37,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/email"
+        android:id="@+id/user"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         app:startIconDrawable="@drawable/ic_baseline_person_24"
@@ -62,10 +62,10 @@
         android:textColor="@color/black_1000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintTop_toBottomOf="@+id/user" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/pasword"
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         app:endIconMode="password_toggle"
@@ -97,7 +97,7 @@
         app:cornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pasword" />
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
 
     <TextView

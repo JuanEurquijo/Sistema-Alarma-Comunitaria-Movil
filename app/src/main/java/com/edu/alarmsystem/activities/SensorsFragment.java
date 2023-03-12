@@ -32,7 +32,8 @@ public class SensorsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         String [] options = {"Lumínico","Movimiento","Temperatura","Presión"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, options);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, options);
         binding.spinnerSensors.setAdapter(adapter);
     }
+
 }
